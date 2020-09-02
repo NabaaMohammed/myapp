@@ -1,0 +1,36 @@
+.nav
+{
+  background: #172b96;
+    border-radius: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    color: white;
+    z-index: 2;
+    button 
+    {
+      background: #172b96;
+    border: none;
+    color: white;
+    font-size: 20px;
+    margin: 0px 16px;
+    padding: 10px 26px;
+    a 
+    {
+      color: white;
+    text-decoration: none;
+     font-size: 20px;
+    }
+    }
+}
+mat-grid-tile {
+  background: #eff0f1;
+}
+.MianBody{
+  margin-top: 8rem;
+}
+.mainTitle
+{
+  padding:0px 0 0px 59px;
+}
