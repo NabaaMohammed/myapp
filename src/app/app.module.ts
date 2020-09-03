@@ -14,8 +14,15 @@ import { RouterModule } from '@angular/router';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTableModule } from '@angular/material/table';
 import { AddPaymentComponent } from './component/add-payment/add-payment.component';
-import { MatButtonModule } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button'; 
+import { FormGroup, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms' ;
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core'; 
 import { MatFormFieldModule } from '@angular/material/form-field';
+
+
 
 @NgModule({
   declarations: [
@@ -33,7 +40,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatGridListModule,
     MatTableModule,
     MatButtonModule,
-    MatFormFieldModule
+     FormsModule, ReactiveFormsModule ,
+    HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
 
   ],
   providers: [PaymentService],
