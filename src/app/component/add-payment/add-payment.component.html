@@ -1,63 +1,69 @@
-<p>add-payment works!</p>
+<h1> Add payment </h1>
 <form [formGroup]="_form">
-<!-- creditCardNumber   cardholder  expirationDate:    securityCode   amount  -->
-    <div class="form-group">
-        <label>credit Card Number :</label>
-        <input type="text" class="form-control" placeholder="creditCardNumber" formControlName="creditCardNumber"
-            [class.is-valid]="isValidInput('creditCardNumber')" [class.is-invalid]="isInValidInput('creditCardNumber')">
-    
-        <div *ngIf="hasError('creditCardNumber', 'required')" class="invalid-feedback"> credit Card Number is required </div>
-     
-    </div>
+<!-- creditCardNumber   cardholder  expirationDate    securityCode   amount  -->
 
-    <!-- _______________________________________________________ -->
-    <div class="form-group">
-        <label>cardholder :</label>
-        <input type="text" class="form-control" placeholder="cardholder" formControlName="cardholder"
-            [class.is-valid]="isValidInput('cardholder')" [class.is-invalid]="isInValidInput('cardholder')">
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">credit Card Number </span>
+    </div>
+    <input type="text" class="form-control" aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-default"
+        placeholder="creditCardNumber" formControlName="creditCardNumber"
+        [class.is-valid]="isValidInput('creditCardNumber')"
+        [class.is-invalid]="isInValidInput('creditCardNumber')">
     
+    <div *ngIf="hasError('creditCardNumber', 'required')" class="invalid-feedback"> credit Card Number is required </div>
+</div>
+<!-- _______________________________________________________ -->
+
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">cardholder </span>
+    </div>
+    <input type="text" class="form-control" aria-label="Sizing example input"
+           aria-describedby="inputGroup-sizing-default"placeholder="cardholder" 
+           formControlName="cardholder"
+            [class.is-valid]="isValidInput('cardholder')"
+           [class.is-invalid]="isInValidInput('cardholder')">
         <div *ngIf="hasError('cardholder', 'required')" class="invalid-feedback"> cardholder is required  </div>
-        
-    </div>
-    
-    <!-- _______________________________________________________ -->
+</div>
+<!-- _______________________________________________________ -->
    
-    <div class="form-group">
-    <label>expiration Date :</label>
-         
-
-        <mat-form-field color="accent" >
+<div class="form-group">
+    <label>expiration Date </label>
             <mat-label>Inherited calendar color</mat-label>
             <input  formControlName="expirationDate" matInput [matDatepicker]="picker1">
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
-        </mat-form-field>
+</div>
+ <!-- _______________________________________________________ -->
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">security Code</span>
     </div>
-    <!-- _______________________________________________________ -->
-    <div class="form-group">
-        <label>securityCode :</label>
-        <input type="text" class="form-control"  minlength="3" placeholder="securityCode" formControlName="securityCode"
-            [class.is-valid]="isValidInput('securityCode')" [class.is-invalid]="isInValidInput('securityCode')">
+    <input type="text" class="form-control" aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-default"
+        inlength="3" placeholder="securityCode"
+        formControlName="securityCode"
+        [class.is-valid]="isValidInput('securityCode')" 
+        [class.is-invalid]="isInValidInput('securityCode')">
      
+</div>
+ 
+ <!-- _______________________________________________________ -->
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">amount</span>
     </div>
-    
-    <!-- _______________________________________________________ -->
-    <div class="form-group">
-        <label>amount :</label>
-        <input 
-            type="number"
-            class="form-control"   
-            placeholder="amount" 
+    <input type="number" class="form-control" aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-default"
+        placeholder="amount" 
             formControlName="amount"
             [class.is-valid]="isValidInput('amount')" 
             [class.is-invalid]="isInValidInput('amount')">
-    
         <div *ngIf="hasError('amount', 'required')" class="invalid-feedback">amount is required   </div>
-        <!-- <div *ngIf="hasError('amount', 'rangeLength')" class="invalid-feedback">يجب ان يكون الحقل متكون من حرفين او اكثر</div> -->
-    
-    </div>
-    
-    <!-- _______________________________________________________ -->
+</div>
+ <!-- _______________________________________________________ -->
     <button (click)="onSubmit()">Add </button>
-    <!-- _______________________________________________________________________ -->
+<!-- _______________________________________________________________________ -->
 </form>

@@ -1,2 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
 body{background-color: #f9f9f9;}
+.mat-datepicker-content .mat-calendar {
+  
+    z-index: 33333 !important;
+    position: absolute !important;
+    background: white !important;
+    top: 384px !important;
+    left: 201px !important;
+}
